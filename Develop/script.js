@@ -20,9 +20,12 @@ var confirmNumber;
 var confirmCharacter;
 var confirmUppercase;
 var confirmLowercase;
+
 // Start Password variable values: 
 // Special characters 
-// ??? comas are being generated with user choices
+
+// ??? comams are being generated with user choices
+
 character = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 // Numeric characters
 number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -44,6 +47,8 @@ var choices;
 // 9. Join characters in the password array into a string
 // 10. return the passsword string
 
+// notes- .concat merges two or more arrays
+
 // Start function to generate password
 
 function generatePassword() {
@@ -63,10 +68,10 @@ function generatePassword() {
 
     } else {
         // Continues once user input is validated
-        confirmNumber = confirm("Will this contain numbers?");
-        confirmCharacter = confirm("Will this contain special characters?");
-        confirmUppercase = confirm("Will this contain Uppercase letters?");
-        confirmLowercase = confirm("Will this contain Lowercase letters?");
+        confirmNumber = confirm("Will your password contain numbers?");
+        confirmCharacter = confirm("Will your password contain special characters?");
+        confirmUppercase = confirm("Will your password contain Uppercase letters?");
+        confirmLowercase = confirm("Will your password contain Lowercase letters?");
     };
 
     // Else if for 4 negative options
