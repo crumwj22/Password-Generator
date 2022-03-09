@@ -13,8 +13,7 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// 1. create buckets for each character type (use array to create a bucket)(global scope)
-
+// buckets for each character type 
 var enter;
 var confirmNumber;
 var confirmCharacter;
@@ -23,37 +22,20 @@ var confirmLowercase;
 
 // Start Password variable values: 
 // Special characters 
-
-// ??? comams are being generated with user choices
-
-character = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+var character = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 // Numeric characters
-number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 // Alphabetical characters
-lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 // Space is for the Uppercase conversion
-upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 // Choices declared outside the if statement so they can be concatenated upon condition
+
 var choices;
-  
-// 1. Get user preferences 
-// 2. Identify and collect the buckets the user has chosen
-// 3. Create a guarenteed collection
-// 4. create a password variable, an array
-// 5. Randomly draw a character
-// 6. put that character on the password variable (how to put an element on the end of an array *google)
-// 7. repeat 5 and 6 as many times as specified using for loop (8character password then repeat 8 times)
-// 8. loop through the guarenteed element, replace in password array (floor.math.random)
-// 9. Join characters in the password array into a string
-// 10. return the passsword string
-
-// notes- .concat merges two or more arrays
-
-// Start function to generate password
+ 
 
 function generatePassword() {
     
-  // Asks for user input
     enter = parseInt(prompt("How many characters would you like your password to be? Choose between 8 and 128"));
     // First if statement for user validation 
     if (!enter) {
@@ -61,11 +43,13 @@ function generatePassword() {
     } else if (enter < 8 || enter > 128) {
         // Validates user input
         // Start user input prompts
-        enter = parseInt(prompt("You must choose between 8 and 128"));
+        // enter = parseInt(prompt("You must choose between 8 and 128"));
 
-        // ??? how to restart when user doesnt select the correct amount of passwords 
-        // ??? when entering a second time it will still put improper amount asked
+        alert("You must choose between 8 and 128")
 
+        return"Try again";
+
+        
     } else {
         // Continues once user input is validated
         confirmNumber = confirm("Will your password contain numbers?");
@@ -140,8 +124,7 @@ function generatePassword() {
         password.push(pickChoices);
     }
     
-    return password;
+    return password.join("");
 
-    // ??? should I have a function to clear the box and start over
-  }
+}
 
