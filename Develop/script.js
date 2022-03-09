@@ -7,7 +7,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
@@ -30,7 +29,6 @@ var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 // Space is for the Uppercase conversion
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 // Choices declared outside the if statement so they can be concatenated upon condition
-
 var choices;
  
 
@@ -42,14 +40,11 @@ function generatePassword() {
         alert("This needs a value");
     } else if (enter < 8 || enter > 128) {
         // Validates user input
-        // Start user input prompts
-        // enter = parseInt(prompt("You must choose between 8 and 128"));
-
         alert("You must choose between 8 and 128")
 
         return"Try again";
 
-        
+    // Start user input prompts    
     } else {
         // Continues once user input is validated
         confirmNumber = confirm("Will your password contain numbers?");
