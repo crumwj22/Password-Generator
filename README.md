@@ -2,7 +2,7 @@
 
 ## My Task
 
-This week’s homework requires you to modify starter code to create an application that enables employees to generate random passwords based on criteria that they’ve selected. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished, responsive user interface that adapts to multiple screen sizes.
+This week’s homework requires me to modify starter code to create an application that enables employees to generate random passwords based on criteria that they’ve selected. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that I have writen. It will have a clean and polished, responsive user interface that adapts to multiple screen sizes.
 
 ## User Story
 
@@ -31,6 +31,6 @@ THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 ```
-<a href="https://crumwj22.github.io/password-generator">Password Generator</a>
+<a href="https://crumwj22.github.io/password-generator/">Password Generator</a>
 
 <img src="Images/password_generator.png">
