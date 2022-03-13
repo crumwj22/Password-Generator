@@ -37,21 +37,52 @@ THEN the password is either displayed in an alert or written to the page
 
 # Code I could not get to work
 
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+// buckets for each character type 
+var enter;
+var confirmNumber;
+var confirmCharacter;
+var confirmUppercase;
+var confirmLowercase;
+
+// Start Password variable values: 
+
+// Numeric characters
 var number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
+// Special characters 
 var character = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 
+// Alphabetical characters
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+// Space is for the Uppercase conversion
 
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+// Choices declared outside the if statement so they can be concatenated upon condition
 
 var choices = [];
 var garNum = [];
 
+
 function generatePassword() {
 
-enter = parseInt(prompt("How many characters would you like your password to be? Choose between 8 and 128"));
     
+    
+    enter = parseInt(prompt("How many characters would you like your password to be? Choose between 8 and 128"));
+    // First if statement for user validation 
     if (!enter) {
         alert("Please enter a value");
     } else if (enter < 8 || enter > 128) {
@@ -60,7 +91,7 @@ enter = parseInt(prompt("How many characters would you like your password to be?
 
         return"Try again";
 
-    
+    // Start user input prompts    
     } else {
         
         confirmNumber = confirm("Will your password contain numbers?");
@@ -69,11 +100,12 @@ enter = parseInt(prompt("How many characters would you like your password to be?
         confirmLowercase = confirm("Will your password contain Lowercase letters?");
     }
 
+    // if for 4 negative options
     if (!confirmCharacter && !confirmNumber && !confirmUppercase && !confirmLowercase) {
         choices = alert("You must choose a criteria!");
     }
     
-   
+    // if Number selected
     if (confirmNumber) {
         choices = choices.concat(number);
         var ranIndex = Math.floor(Math.random() * number.length);
@@ -81,6 +113,8 @@ enter = parseInt(prompt("How many characters would you like your password to be?
         garNum.push(possibleNum)
     }
 
+
+    // if Character selected
     if (confirmCharacter) {
         choices = choices.concat(character);
         var ranIndex = Math.floor(Math.random() * character.length);
@@ -88,6 +122,8 @@ enter = parseInt(prompt("How many characters would you like your password to be?
         garNum.push(possibleChar)
     }
 
+
+    // if Uppercase selected
     if (confirmUppercase) {
         choices = choices.concat(upperCase);
         var ranIndex = Math.floor(Math.random() * upperCase.length);
@@ -95,15 +131,19 @@ enter = parseInt(prompt("How many characters would you like your password to be?
         garNum.push(possibleUppercase)
     }
 
+    // if Lowercase selected
     if (confirmLowercase) {
         choices = choices.concat(lowerCase);
         var ranIndex = Math.floor(Math.random() * lowerCase.length);
         var possibleLowercase = lowerCase[ranIndex] 
         garNum.push(possibleLowercase)
     }
-
+    
+    // password variable is an array placeholder for user generated amount of length
     var password = [];
 
+    // Start random selection variables:
+    // Random selection for all variables: 
     for (var i = 0; i == parseInt(garNum); i++) {
         var pickChoices = choices[Math.floor(Math.random() * choices.length)];
         password.push(garNum[pickChoices]);
